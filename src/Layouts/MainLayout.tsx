@@ -1,9 +1,11 @@
 import {Outlet} from "react-router-dom";
 
 import {Header} from "../components/Header/Header";
+
+import {useAppFlagContext} from "../hooks";
 import {SearchForm} from "../components/SearchContainer/SearchForm";
-import React from "react";
-import {useAppFlagContext} from "../hooks/useAppFlagContext";
+
+
 
 const MainLayout = () => {
     const {flag} = useAppFlagContext()

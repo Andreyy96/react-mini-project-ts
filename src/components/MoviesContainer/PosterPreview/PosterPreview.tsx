@@ -5,10 +5,12 @@ import css from "./PosterPreview.module.css"
 interface IProps {
     poster_url: string
 }
+
 const PosterPreview:FC<IProps> = ({poster_url}) => {
+    const url = "https://Image.tmdb.org/t/p/w500"
 
     return (
-        <img className={css.poster} src={`https://Image.tmdb.org/t/p/w500${poster_url}`}  alt={poster_url}/>
+        <img className={css.poster} src={url + poster_url} alt={poster_url}/>
     );
 };
 

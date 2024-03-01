@@ -1,13 +1,11 @@
 import React, {FC, useEffect, useState} from 'react';
-
+import {useSearchParams} from "react-router-dom";
 
 import {movieService} from "../../../services";
 import {MoviesListCard} from "../MoviesListCard";
-
-import {useSearchParams} from "react-router-dom";
-import {useAppContext} from "../../../hooks/useAppContext";
 import {IData, IPaginationData} from "../../../interfaces";
-import {UsePaganationPage} from "../../../hooks";
+import {useAppContext, UsePaganationPage} from "../../../hooks";
+import css from "./MoviesList.module.css"
 
 
 interface IProps {
@@ -21,14 +19,13 @@ const MoviesList:FC<IProps> = () => {
     const id = searchParams.get("id")
     const word = searchParams.get("query")
 
-    // const {word} = useAppContext()
 
 
     useEffect(() => {
         if (id) {
             movieService.getByGenre(id, page).then(({data}) => setMoviesRes(data))
         }
-        else if (word) {
+        else if (word){
             movieService.getSearchAll(word, page).then(({data}) => setMoviesRes(data))
         }
         else {
@@ -37,13 +34,13 @@ const MoviesList:FC<IProps> = () => {
     }, [page, id, word]);
 
     return (
-        <div>
-            <div>
+        <div className={css.main_div}>
+            <div className={css.movies_list}>
                 {moviesRes.results.map(movie => <MoviesListCard movie={movie} key={movie.id} />)}
             </div>
-            <div>
+            <div className={css.button_container}>
                 <button disabled={page==='1'} onClick={prev}>prev</button>
-                <button disabled={!page} onClick={next}>next</button>
+                <button  onClick={next}>next</button>
             </div>
         </div>
     );

@@ -18,8 +18,11 @@
     "react-stars": "^2.2.5",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4",
-    "react-bootstrap": "^2.10.1",
-    "react-hook-form": "^7.50.1"
+    "react-hook-form": "^7.50.1",
+    "@mui/material": "^5.15.11",
+    "@mui/icons-material": "^5.15.11",
+    "@emotion/styled": "^11.11.0",
+    "@emotion/react": "^11.11.3"
   },
   "scripts": {
     "start": "react-scripts start",

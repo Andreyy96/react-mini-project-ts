@@ -1,0 +1,57 @@
+.main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main p {
+    margin: 7px 0 5px 15px;
+    font-size: 18px;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+}
+.poster {
+    height: 400px;
+    width: 30%;
+    text-align: end;
+}
+
+.poster img{
+    height: 400px;
+    width: 300px;
+}
+
+.details {
+    width: 60%;
+    background: #2196F3;
+}
+
+.genres_container {
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+.genres_container a {
+
+    text-decoration: none;
+
+}
+
+.companies_container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rating_p {
+    width: 80px;
+}
+
+.overview {
+    width: 1060px;
+    margin-left: 80px;
+}

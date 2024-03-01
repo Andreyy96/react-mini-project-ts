@@ -1,0 +1,11 @@
+.movies_list_card {
+    width: 200px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.movies_list_card h3, p {
+    margin: 8px 0;
+}

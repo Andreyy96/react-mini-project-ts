@@ -1,0 +1,14 @@
+.div_form {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.div_form input {
+    padding: 6px 6px;
+    border-radius: 10%;
+}
+
+.div_form button {
+    margin-left: 10px;
+    padding: 6px 10px;
+}

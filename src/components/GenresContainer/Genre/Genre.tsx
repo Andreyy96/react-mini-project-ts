@@ -1,6 +1,8 @@
 import {FC} from 'react';
-import {IGenre} from "../../interfaces/genreInterface";
 import {NavLink} from "react-router-dom";
+
+import {IGenre} from "../../../interfaces";
+import css from "./Genre.module.css"
 
 interface IProps {
     genre: IGenre
@@ -10,7 +12,7 @@ const Genre:FC<IProps> = ({genre}) => {
     const {id,name} = genre
 
     return (
-        <NavLink to={`/movies?id=${id}`}>{name}</NavLink>
+        <NavLink className={css.genre} to={`/movies?id=${id}`}><p>{name}</p></NavLink>
     );
 };
 

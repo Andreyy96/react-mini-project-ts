@@ -1,17 +1,18 @@
 import {FC} from 'react';
-import {IMovie} from "../../../interfaces";
+import Badge from "@mui/material/Badge";
 
-import {StarsRating} from "../StarsRating/StarsRating";
+import {IMovie} from "../../../interfaces";
 import {PosterPreview} from "../PosterPreview";
 import {useNavigate} from "react-router-dom";
-
+import {StarsRating} from "../StarsRating";
+import css from "./MoviesListCard.module.css"
 
 interface IProps {
     movie: IMovie
 }
 const MoviesListCard:FC<IProps> = ({movie}) => {
 
-    const {id,poster_path,original_title, vote_average} = movie
+    const {id,poster_path,title, vote_average} = movie
     const navigate = useNavigate()
 
     const goMovieDetails: () => void = () => {
@@ -19,10 +20,12 @@ const MoviesListCard:FC<IProps> = ({movie}) => {
     }
 
     return (
-        <div onClick={goMovieDetails}>
-            <PosterPreview poster_url={poster_path}/>
-            <h3>{original_title}</h3>
+        <div className={css.movies_list_card} onClick={goMovieDetails}>
+            <Badge badgeContent={Math.round(vote_average)} color="primary">
+                <PosterPreview poster_url={poster_path}/>
+            </Badge>
             <StarsRating rating={vote_average}/>
+            <h3>{title}</h3>
         </div>
     );
 };

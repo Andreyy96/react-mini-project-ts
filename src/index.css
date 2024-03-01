@@ -7,12 +7,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body.warning {
-  background: gray;
+
+body.night {
+  background: black;
   transition: background 0.8s ease;
   }
 
+body.night h2 {
+  color: white;
+}
 
+body.night h3 {
+  color: white;
+}
+
+body.night p {
+  color: white;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

@@ -1,0 +1,21 @@
+.genres_div {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.genres_list {
+    width: 850px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.genres_list  a{
+    color: black;
+
+    text-decoration: none;
+
+}
