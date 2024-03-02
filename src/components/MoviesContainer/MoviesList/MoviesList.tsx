@@ -4,8 +4,11 @@ import {useSearchParams} from "react-router-dom";
 import {movieService} from "../../../services";
 import {MoviesListCard} from "../MoviesListCard";
 import {IData, IPaginationData} from "../../../interfaces";
-import {useAppContext, UsePaganationPage} from "../../../hooks";
+import {useAppFlagContext, usePageQuery} from "../../../hooks";
 import css from "./MoviesList.module.css"
+import {Genres} from "../../GenresContainer/Genres";
+
+
 
 
 interface IProps {
@@ -13,11 +16,12 @@ interface IProps {
 }
 const MoviesList:FC<IProps> = () => {
 
-    const [moviesRes, setMoviesRes] = useState<IData>({page: null, results: []})
-    const {page, prev, next}: IPaginationData = UsePaganationPage()
+    const [moviesRes, setMoviesRes] = useState<IData>({page: null, results: [], total_pages: null})
+    const {page, prev, next}: IPaginationData = usePageQuery()
     const [searchParams] = useSearchParams()
-    const id = searchParams.get("id")
-    const word = searchParams.get("query")
+    const id: string = searchParams.get("id")
+    const word: string = searchParams.get("query")
+    const {flag} =useAppFlagContext()
 
 
 
@@ -33,14 +37,23 @@ const MoviesList:FC<IProps> = () => {
         }
     }, [page, id, word]);
 
+    if (moviesRes.total_pages >= 500) {
+        moviesRes.total_pages = 500
+    }
+
+    console.log(page)
+
     return (
         <div className={css.main_div}>
+            {!flag && <Genres/>}
+            <p>You appear on page {page} of {moviesRes.total_pages}</p>
             <div className={css.movies_list}>
                 {moviesRes.results.map(movie => <MoviesListCard movie={movie} key={movie.id} />)}
             </div>
             <div className={css.button_container}>
-                <button disabled={page==='1'} onClick={prev}>prev</button>
-                <button  onClick={next}>next</button>
+                <button disabled={page === "1"} onClick={prev}>prev</button>
+                <div className={css.totalPage}><p>{page}</p></div>
+                <button disabled={+page === moviesRes.total_pages} onClick={next}>next</button>
             </div>
         </div>
     );

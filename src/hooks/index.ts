@@ -1,3 +1,3 @@
 export * from "./useAppContext"
 export * from "./useAppFlagContext"
-export * from "./usePaganationPage"
+export * from "./usePageQuery"

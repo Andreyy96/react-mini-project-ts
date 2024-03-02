@@ -12,7 +12,7 @@ const Genre:FC<IProps> = ({genre}) => {
     const {id,name} = genre
 
     return (
-        <NavLink className={css.genre} to={`/movies?id=${id}`}><p>{name}</p></NavLink>
+        <NavLink className={css.genre} to={`/movies?id=${id}&page=1`}><p>{name}</p></NavLink>
     );
 };
 

@@ -5,24 +5,39 @@
     flex-direction: column;
 }
 
+.main_div p{
+    font-family: Arial, sans-serif;
+}
+
+.main_div a {
+    background: none;
+    border: none;
+}
 
 .movies_list {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 1200px;
+    width: 93.75vw;
     gap: 25px;
-    padding: 20px 0 20px 0
+    padding: 2.317497103128621vh 0
 }
 
 .button_container {
-    width: 160px;
-    padding: 20px 0 20px 0;
+    width: 17.96875vw;
+    padding: 2.317497103128621vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
 .button_container button {
-    margin: 0 15px;
-    padding: 8px 8px;
+    margin: 0 1.171875vw;
+    height: 3.476245654692932vh;
+    padding: 0.5793742757821553vh 0.390625vw;
+}
 
+.totalPage {
+    text-align: center;
 }

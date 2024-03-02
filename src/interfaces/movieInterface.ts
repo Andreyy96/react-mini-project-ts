@@ -1,4 +1,6 @@
 import {IGenre} from "./genreInterface";
+import {ICompany} from "./companyInterface";
+import {ICountry} from "./countryInterface";
 
 export interface IMovie {
     adult: boolean;
@@ -11,5 +13,7 @@ export interface IMovie {
     title: string
     release_date: string
     vote_average: number
-    production_companies: [{id: number, name: string}]
+    production_companies: ICompany[]
+    production_countries: ICountry[]
+    runtime: number
 }

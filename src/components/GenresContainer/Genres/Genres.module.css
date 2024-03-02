@@ -1,5 +1,5 @@
 .genres_div {
-    padding-top: 20px;
+    padding-top: 2.317497103128621vh;
     display: flex;
     justify-content: center;
 
@@ -7,15 +7,17 @@
 }
 
 .genres_list {
-    width: 850px;
+    width: 85.9375vw;
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 8px;
 }
 
 .genres_list  a{
     color: black;
-
     text-decoration: none;
+}
 
+.genres_list p{
+    margin: 0;
 }

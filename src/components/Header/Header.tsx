@@ -27,7 +27,7 @@ const Header:FC<IProps> = () => {
     return (
         <div className={css.Header}>
             <div>
-                <h2>MoviesDB List</h2>
+                <h2>MoviesDB</h2>
             </div>
             <div>
                 <NavLink to={""} onClick={() => setWord(null)}>Home</NavLink>

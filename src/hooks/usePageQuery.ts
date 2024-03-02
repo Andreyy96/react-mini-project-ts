@@ -1,6 +1,6 @@
 import {useSearchParams} from "react-router-dom";
 
-const UsePaganationPage = () => {
+const usePageQuery = () => {
 
     const [query, setQuery] = useSearchParams({page: '1'});
 
@@ -9,15 +9,19 @@ const UsePaganationPage = () => {
     return {
         page,
         prev: () => setQuery(prev => {
-            prev.set('page', (+prev.get('page') - 1).toString())
-             console.log(typeof {prev})
+            if (page <= "1") {
+                prev.set("page", "1")
+            }
+            else {
+                prev.set('page', (+page - 1).toString())
+            }
             return prev
         }),
         next: () => setQuery(prev => {
-            prev.set('page', (+prev.get('page') + 1).toString())
-            console.log(typeof prev)
+            prev.set('page', (+page + 1).toString())
             return prev
         })
     }
 }
-export {UsePaganationPage}
+
+export {usePageQuery}
